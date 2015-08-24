@@ -12,10 +12,15 @@ import java.net.URLConnection;
 import java.util.*;
 
 /**
- * Created by stuart on 24/08/15.
+ * A list of Google search results
  */
 public class Results implements List<Result> {
     private ArrayList<Result> results;
+
+    /**
+     * Gets the desired search results from Google and parses them into JavaBeans
+     * @param search
+     */
     public Results(String search) {
         try {
             URL url = new URL("https://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=" + search.trim().replace(" ", "%20"));
